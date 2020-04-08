@@ -1,0 +1,10 @@
+{% extends 'admin/model/edit.html' %}
+
+{% block body %}
+    {{ super() }}
+    {% if current_user.id|string ==  request.args.get('id')|string %}
+    <center>
+    <a class="btn btn-primary" href="{{ url_for('api.token_gen') }}?user_id={{request.args.get('id')}}">Это и есть токен.</a>
+    </center>
+    {% endif %}
+{% endblock %}

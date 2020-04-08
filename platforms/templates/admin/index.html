@@ -1,0 +1,24 @@
+{% extends 'admin/master.html' %}
+{% block body %}
+{{ super() }}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+            <h1>Сервер нотификации</h1>
+            {% if not current_user.is_authenticated %}
+            <p>
+                <p class="lead">
+                Приветствуем вас в наших замечательных интерфейсах
+                </p>
+                <a class="btn btn-primary" href="{{ url_for('security.login') }}">login</a>
+            </p>
+            {% else %}
+                <p class="lead">
+                Уходи !
+                </p>
+                <a class="btn btn-primary" href="{{ url_for('security.logout') }}">Уйти</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock body %}

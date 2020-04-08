@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flask-SSE Notification</title>
+</head>
+<body>
+  <h1>Flask-SSE Notification</h1>
+  <script>
+    var source = new EventSource("{{  url_for('sse.stream') }}");
+    source.addEventListener('greeting', function (event) {
+        var data = JSON.parse(event.data);
+        alert("Сервер говорит: " + data.message);
+    }, false);
+    source.addEventListener('error', function (event) {
+        alert("Не получается, поломалось всё =(")
+    }, false);
+  </script>
+</body>
+</html>
