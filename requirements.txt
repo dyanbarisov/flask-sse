@@ -4,7 +4,7 @@ Babel==2.7.0
 blinker==1.4
 Click==7.0
 dnspython==1.16.0
-eventlet==0.25.0
+eventlet==0.31.0
 Flask==1.0.3
 Flask-Admin==1.5.3
 Flask-BabelEx==0.9.3
